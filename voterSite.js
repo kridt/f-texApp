@@ -52,7 +52,7 @@ fetch("http://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 
             /* console.log(theVote); */
 
-            fetch(`https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`, {
+            fetch(`http://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`, {
                 method: `POST`,
                 body
             }).then(response => {

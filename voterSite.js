@@ -39,7 +39,6 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
             var voter = user + " " + name;
             var message = voteForm.message.value;
 
-            console.log(count);
 
             var body = new FormData(voteForm);
             body.vote = voter;

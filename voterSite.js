@@ -24,7 +24,6 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
         var selectMedarbejder = document.getElementById("vote")
         data.results.forEach(result => {
            const option = document.createElement("option");
-        option.value.add(`${result.name}`)
            option.innerText = `
            ${result.name} fra ${result.department}
            `;

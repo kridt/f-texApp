@@ -24,7 +24,10 @@ fetch("http://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
         var selectMedarbejder = document.getElementById("vote")
         data.results.forEach(result => {
            const option = document.createElement("option");
-           option.innerText = `${result.name} fra ${result.department}`;
+        option.value.add(`${result.name}`)
+           option.innerText = `
+           ${result.name} fra ${result.department}
+           `;
             selectMedarbejder.appendChild(option)
         });
 
@@ -37,14 +40,17 @@ fetch("http://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
             var voter = user + " " + name;
             var message = voteForm.message.value;
 
+            console.log(count);
+
             var body = new FormData(voteForm);
             body.vote = voter;
             body.voter = voter;
+
             
             
             var theVote = {vote, voter, message};
 
-            console.log(theVote);
+            /* console.log(theVote); */
 
             fetch(`https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`, {
                 method: `POST`,
@@ -54,6 +60,7 @@ fetch("http://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
                     alert("Noget gik galt")
                     return;
                 }
+                window.location.href="/tak.html"
         });
     } )
 
@@ -71,7 +78,6 @@ fetch("http://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
                     alert("Noget gik galt")
                     return;
                 } 
-                window.location.href="/tak.html"
             })
         })
         

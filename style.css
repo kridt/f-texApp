@@ -1,3 +1,12 @@
 #voter{
     display: none;
 }
+
+body{
+    background-color: #131E39;
+}
+
+h1, p{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}

@@ -2,7 +2,7 @@ var user = localStorage.getItem("voter");
 var displayName = document.getElementById("name");
 /* console.log(user); */
 
-fetch("http://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
+fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 .then(response => response.json())
 .then(function(data) {
     
@@ -52,7 +52,7 @@ fetch("http://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 
             /* console.log(theVote); */
 
-            fetch(`http://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`, {
+            fetch(`https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`, {
                 method: `POST`,
                 body
             }).then(response => {

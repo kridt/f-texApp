@@ -1,7 +1,7 @@
 var liste = document.querySelector(".leaderboard");
 
 
-fetch(`http://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`)
+fetch(`https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`)
 .then(response => response.json())
 .then(function(data) {
 

@@ -12,6 +12,9 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
         
         if(user === "299371") {
             displayName.innerText= `Hej til den bedste postmedarbejder ${first_name}`
+        }else{
+            displayName.innerText= `Hej ${first_name}`;
+
         }
 
         if(user === "127027"){

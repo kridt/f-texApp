@@ -23,11 +23,12 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
                 if(user === "276712") {
                     displayName.innerText=`Vær hilset lord Lord Kirchmann `
                 }else{
-                    if(user === "275398") {
-                        displayName.innerText=`Dig igen ${first_name}`;
+                    if(user === "164745") {
+                        displayName.innerText=`Hey Tina v2`;
 
 
                     }else{
+                        
                         displayName.innerText= `Hej ${first_name}`;
 
                     }

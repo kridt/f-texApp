@@ -5,18 +5,20 @@ var displayName = document.getElementById("name");
 fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 .then(response => response.json())
 .then(function(data) {
-    
-        var name = data.results.filter(x => x.sallingID === user).map(x => x.name)
-         var full_name_spit = name[0].split(" ")
+    setTimeout(function(){ 
+        var name = data.results.filter(x => x.sallingID === user).map(x => x.name) 
+        var full_name_spit = name[0].split(" ")
         var first_name = full_name_spit[0]
+        
         if(user === "127027"){
             displayName.innerText= `YELLOW ${first_name}!`;
             
         }else{
-
+            
             displayName.innerText= `Hej ${first_name}`;
         }
-
+    }, 500);
+        
         var voterData = document.getElementById("voter");
 
         voterData.value = user + " " + name;

@@ -10,6 +10,10 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
         var full_name_spit = name[0].split(" ")
         var first_name = full_name_spit[0]
         
+        if(user === "299371") {
+            displayName.innerText= `Hej til den bedste postmedarbejder ${first_name}`
+        }
+
         if(user === "127027"){
             displayName.innerText= `YELLOW ${first_name}!`;
             
@@ -17,7 +21,7 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
             
             displayName.innerText= `Hej ${first_name}`;
         }
-    }, 500);
+    }, 200);
         
         var voterData = document.getElementById("voter");
 

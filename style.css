@@ -3,10 +3,35 @@
 }
 
 body{
-    background-color: #131E39;
+    background-color: #1D2F53;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
-h1, p{
+h1, p, label{
     color: white;
     font-family: 'Roboto', sans-serif;
+}
+
+.logInForm input[type=number] {
+    border-radius: 15px;
+    height: 1.5em;
+    width: 350px;
+    margin-left: 2%;
+    margin-top: 2em;
+    display: block;
+}
+
+.logInForm input[type=submit] {
+    width: 100px;
+    margin-top: 1.5em;
+    margin-left: 35%;
+}
+
+.logInForm{
+    margin-top: 7em;
+}
+
+.logInForm label{
+    font-size: 1.9em;
 }

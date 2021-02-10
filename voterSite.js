@@ -12,7 +12,7 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
         
         
         if(user === "127027"){
-            displayName.innerText= `YELLOW ${first_name}!`;
+            displayName.innerHTML= `<h1 class="tina">YELLOW ${first_name}!</h1> `;
             
         }else{
             

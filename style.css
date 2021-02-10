@@ -8,6 +8,16 @@ body{
     margin: 0 auto;
 }
 
+#vote{
+    display: block;
+    margin-bottom: 1em;
+}
+
+#message{
+    display: block;
+    margin-bottom: 1em;
+}
+
 h1, p, label{
     color: white;
     font-family: 'Roboto', sans-serif;
@@ -34,4 +44,11 @@ h1, p, label{
 
 .logInForm label{
     font-size: 1.9em;
+}
+.tina{
+    color: yellow;
+    font-size: 1em;
+}
+.tak{
+    text-align: center;
 }

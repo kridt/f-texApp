@@ -7,7 +7,7 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
     var user = "";
     var logInForm = document.querySelector(".logInForm");
     
-
+ 
     var userList = [];
     
     data.results.forEach(element => {

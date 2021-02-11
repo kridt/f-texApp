@@ -19,4 +19,4 @@ fetch(`https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`)
         `;
         liste.appendChild(li)
     });
-})
+}) 

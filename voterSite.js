@@ -58,7 +58,7 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
             ${element.name}
             `
             dataList.appendChild(coworkerList)
-        }); 
+        });  
         
         
         document.getElementById("vote").addEventListener("change", function(e) {

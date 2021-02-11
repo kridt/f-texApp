@@ -81,7 +81,16 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
             selectMedarbejder.appendChild(option)
         });
 
+        fetch(`https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`)
+            .then(response => response.json())
+            .then(function(data){
         var voteForm = document.querySelector(".voteForm");
+        var voted = [];
+        console.log(voted);
+        data.voting.forEach(element => {
+            voted.push(element.voter)
+            
+        });
 
         voteForm.addEventListener(`submit`, function(e) {
             e.preventDefault();
@@ -95,6 +104,16 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
             body.message = message;
             
             
+               
+
+
+                 if(voted.includes(body.voter)){
+                    alert("Du må kun stemme 1 gang")
+                    console.log("Du må kun stemme 1 gang")
+                    window.location.href("/voterSite.html");
+                } 
+
+
             
 
 
@@ -106,9 +125,18 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
                     alert("Noget gik galt")
                     return;
                 }
-                window.location.href="/tak.html"
+                
+
+    
+})
+                window.location.href="/tak.html";
+
+
+
         });
     } )
+
+    
 
         /* voteForm.addEventListener("submit", function(event) {
             event.preventDefault();

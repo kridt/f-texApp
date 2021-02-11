@@ -6,6 +6,11 @@ fetch(`https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`)
 .then(function(data) {
 
 
+    
+
+    console.log(data);
+    
+    
     data.voting.forEach(result => {
         const li = document.createElement("li");
         li.innerHTML=`
@@ -13,6 +18,5 @@ fetch(`https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`)
         <p>${result.message} - <span>${result.voter}</span></p>
         `;
         liste.appendChild(li)
-         console.log(result);
     });
 })

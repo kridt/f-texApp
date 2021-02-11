@@ -1,5 +1,5 @@
-setTimeout(function(){ 
-    
-    window.location.href="/"
+setTimeout(function () {
+
+    window.location.href = "/"
 
 }, 2000);

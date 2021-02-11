@@ -3,161 +3,176 @@ var displayName = document.getElementById("name");
 /* console.log(user); */
 
 fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
-.then(response => response.json())
-.then(function(data) {
-    setTimeout(function(){ 
-        var name = data.results.filter(x => x.sallingID === user).map(x => x.name) 
-        var full_name_spit = name[0].split(" ")
-        var first_name = full_name_spit[0]
-        
-        
-        if(user === "127027"){
-            displayName.innerHTML= `<h1 class="tina">YELLOW ${first_name}!</h1> `;
-            
-        }else{
-            
-            if(user === "299371") {
-                displayName.innerText= `Hej til den bedste postmedarbejder ${first_name}`
-            }else{
-            
-                if(user === "276712") {
-                    displayName.innerText=`Vær hilset lord Lord Kirchmann `
-                }else{
-                    if(user === "164745") {
-                        displayName.innerText=`Hey Tina v2`;
+    .then(response => response.json())
+    .then(function (data) {
+        setTimeout(function () {
+            var name = data.results.filter(x => x.sallingID === user).map(x => x.name)
+            var full_name_spit = name[0].split(" ")
+            var first_name = full_name_spit[0]
 
 
-                    }else{
+            if (user === "127027") {
+                displayName.innerHTML = `<h1 class="tina">YELLOW ${first_name}!</h1> `;
+
+            } else {
+
+                if (user === "299371") {
+                    displayName.innerText = `Hej til den bedste postmedarbejder ${first_name}`
+                } else {
+
+                    if (user === "276712") {
+                        displayName.innerText = `Vær hilset lord Lord Kirchmann `
+                    } else {
+                        if (user === "164745") {
+                            displayName.innerText = `Hey Tina v2`;
+
+
+                        } else {
+                            
+                            displayName.innerText = `Hej ${first_name}`;
+                            
+                        }
                         
-                        displayName.innerText= `Hej ${first_name}`;
-
+                        
                     }
-
+                    
                     
                 }
                 
-
             }
             
-        }
-        
-
-    }, 200);
-
-    function shuffle(array) {
-        var currentIndex = array.length, temporaryValue, randomIndex;
-      
-       
-        while (0 !== currentIndex) {
-      
-          
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex -= 1;
-      
-        
-          temporaryValue = array[currentIndex];
-          array[currentIndex] = array[randomIndex];
-          array[randomIndex] = temporaryValue;
-        }
-      
-        return array;
-      }
-      shuffle(data.results);
-        
-        var voterData = document.getElementById("voter");
-
-        voterData.value = user + " " + name;
-
-       
-        
-
-
-        var selectMedarbejder = document.getElementById("vote")
-        data.results.forEach(result => {
-           const option = document.createElement("option");
-           option.innerText = `
-           ${result.name} fra ${result.department}
-           `;
-            selectMedarbejder.appendChild(option)
-        });
-
-        fetch(`https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`)
-            .then(response => response.json())
-            .then(function(data){
-        var voteForm = document.querySelector(".voteForm");
-        var voted = [];
-        console.log(voted);
-        data.voting.forEach(element => {
-            voted.push(element.voter)
             
-        });
-
-        voteForm.addEventListener(`submit`, function(e) {
-            e.preventDefault();
-            var vote = voteForm.vote.value;
-            var voter = user + " " + name;
-            var message = voteForm.message.value;
-
-            var body = new FormData(voteForm);
-            body.vote = vote;
-            body.voter = voter;
-            body.message = message;
+        }, 200);
+        
+        
+        
+        
+        var dataList = document.getElementById("vote-datalist")
+        
+        
+        data.results.forEach(element => {
+            const coworkerList = document.createElement("option");
+            coworkerList.classList.add("options");
+            
+            coworkerList.innerText=`
+            ${element.name}
+            `
+            dataList.appendChild(coworkerList)
+        }); 
+        
+        
+        document.getElementById("vote").addEventListener("change", function(e) {
+            var voteInput = e.target.value;
+            localStorage.setItem("vote", voteInput)
+        })
+           
             
             
-               
-
-
-                 if(voted.includes(body.voter)){
-                    alert("Du må kun stemme 1 gang")
-                    console.log("Du må kun stemme 1 gang")
-                    window.location.href("/voterSite.html");
-                } 
-
-
             
-
-
-            fetch(`https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`, {
-                method: `POST`,
-                body
-            }).then(response => {
-                if(!response.ok){
-                    alert("Noget gik galt")
-                    return;
+            function shuffle(array) {
+                var currentIndex = array.length, temporaryValue, randomIndex;
+                
+                
+                while (0 !== currentIndex) {
+                    
+                    
+                    randomIndex = Math.floor(Math.random() * currentIndex);
+                    currentIndex -= 1;
+                    
+                    
+                    temporaryValue = array[currentIndex];
+                    array[currentIndex] = array[randomIndex];
+                    array[randomIndex] = temporaryValue;
                 }
                 
+                return array;
+            }
+            shuffle(data.results);
+            
+            
+            
+            function goHome() {
+                window.location.href = "/";
+            }
+            
+            var voterData = document.getElementById("voter");
+            
+            voterData.value = user + " " + name;
+            fetch(`https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`)
+            .then(response => response.json())
+            .then(function (data) {
+                var voteForm = document.querySelector(".voteForm");
+                
+                
+                
+                var voted = [];
+                data.voting.forEach(element => {
+                    /* voted.push(element.voter) */
+                    console.log(element.voter);
+                });
 
-    
-})
-                window.location.href="/tak.html";
 
 
+                /* console.log(voted, user); */
+                voteForm.addEventListener(`submit`, function (e) {
+                    e.preventDefault();
+                    
+                    var voteLocalStorage = localStorage.getItem("vote")
+                   
+                    if (voted.includes(user)) {
+                        alert("Du må kun stemme 1 gang")
+                        
+                        return goHome()
+                        
+                    }
 
-        });
-    } )
-
-    
-
-        /* voteForm.addEventListener("submit", function(event) {
-            event.preventDefault();
-            var body = new FormData();
-            body.voter = user + " " + name;
-            body.vote = voteForm.vote.value;
-            console.log(new FormData());
-            fetch(`http://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`, {
-                method:"POST",
-                body
-            }).then(response => {
-                if(!response.ok){
-                    alert("Noget gik galt")
-                    return;
-                } 
+                    if(voted.includes(user)) {
+                        console.log("ayt");
+                    }
+                    
+                    
+                    
+                    var vote = voteLocalStorage;
+                    var voter = user;
+                    var message = voteForm.message.value;
+                    
+                    var body = new FormData(voteForm);
+                    body.vote = vote;
+                    body.voter = voter;
+                    body.message = message;
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    fetch(`https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`, {
+                        method: `POST`,
+                        body
+                    }).then(response => {
+                        if (!response.ok) {
+                            alert("Noget gik galt")
+                            return;
+                        }
+                        
+                        
+                        
+                    })
+                    window.location.href = "/tak.html";
+                    
+                    
+                    
+                });
             })
+            
+            
+            
+            
+            
+            
+            
         })
-        
-        */
-
-        
-
-
-    })

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +8,30 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
+
 <body>
     <h1 id="name">Hej </h1>
     <p>Du kan stemme på månedens medarbejder her</p>
 
+
     <form class="voteForm" method="POST" action="https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes">
-    <select placeholder="Vælg en medarbejder" name="vote" id="vote">
-        <option value="">Vælg en medarbejder</option>
-    </select>
+        <input list="vote-datalist" id="vote" name="vote" placeholder="Søg efter medarbejder">
+            
+        <datalist id="vote-datalist">
+            <option id="options" value=""></option>
+        </datalist>
 
-    <label for="message">Hvorfor skal han/hun vinde månedens medarbejder</label>
-    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        <label for="message">Hvorfor skal han/hun vinde månedens medarbejder</label>
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
 
-    <input type="text" name="voter" id="voter">
+        <input type="text" name="voter" id="voter">
 
 
-    <input type="submit" value="Stem!">
+        <input type="submit" value="Stem!">
     </form>
 
 
     <script src="voterSite.js"></script>
 </body>
+
 </html>

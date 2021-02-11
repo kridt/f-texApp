@@ -15,10 +15,9 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
         userList.push(element.sallingID)
     });
     
-    console.log(userList);
+   
     
     logInForm.addEventListener("submit", function(event) {
-        console.log(user);
         user = userLogIn.value;
             if(userList.includes(user)) {
                 

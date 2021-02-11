@@ -72,7 +72,7 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
             
             function shuffle(array) {
                 var currentIndex = array.length, temporaryValue, randomIndex;
-                
+                 
                 
                 while (0 !== currentIndex) {
                     

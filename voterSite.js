@@ -66,7 +66,8 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
             localStorage.setItem("vote", voteInput)
         })
            
-            
+            var voteLocalStorage = localStorage.getItem("vote")
+            console.log(localStorage.getItem("vote"));
             
             
             function shuffle(array) {

@@ -56,3 +56,7 @@ h1, p, label{
 .options{
     display: none;
 }
+
+.logo{
+    text-align: center;
+}

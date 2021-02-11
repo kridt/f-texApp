@@ -117,20 +117,6 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
                 voteForm.addEventListener(`submit`, function (e) {
                     e.preventDefault();
                     
-                    var voteLocalStorage = localStorage.getItem("vote")
-                   
-                    if (voted.includes(user)) {
-                        alert("Du må kun stemme 1 gang")
-                        
-                        return goHome()
-                        
-                    }
-
-                    if(voted.includes(user)) {
-                        console.log("ayt");
-                    }
-                    
-                    
                     
                     var vote = voteLocalStorage;
                     var voter = user;
@@ -140,13 +126,6 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
                     body.vote = vote;
                     body.voter = voter;
                     body.message = message;
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     

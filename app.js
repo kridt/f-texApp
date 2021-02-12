@@ -1,3 +1,4 @@
+var theVotedList = [];
 
 
 fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
@@ -15,7 +16,6 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
         userList.push(element.sallingID)
     });
     
-        var theVotedList = [];
 
     fetch(`https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`)
     .then(response => response.json())
@@ -31,12 +31,14 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
     
    
 
-     console.log(userList);
      console.log(theVotedList);
      
    
     logInForm.addEventListener("submit", function(event) {
+        
+        
         user = userLogIn.value;
+        localStorage.setItem("user", user)
             if(userList.includes(user)) {
                 
             } else{
@@ -44,19 +46,12 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
                 
                 event.preventDefault()
                 
-            }
-            
-            if(theVotedList.includes(user)) {
-                
-            } else{
-                alert("Du må kun stemme 1 gang")
-                event.preventDefault()
-            }
-
+            }  
             localStorage.setItem("voter", user);
             
             
-            })
+        })
+        console.log(theVotedList);
             
 
 

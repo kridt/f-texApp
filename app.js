@@ -22,38 +22,46 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
     .then(function(data) {
         
         data.voting.forEach(element => {
-            theVotedList.push(element.voter)
+            var voter = element.voter;
+            theVotedList.push(voter)
         })
 
         
         
     })
     
-   
-
-     console.log(theVotedList);
-     
-   
+    
+    
+    
+    
     logInForm.addEventListener("submit", function(event) {
         
         
         user = userLogIn.value;
         localStorage.setItem("user", user)
-            if(userList.includes(user)) {
-                
-            } else{
-                alert("Du skal skrive dit lønnummer")
-                
-                event.preventDefault()
-                
-            }  
-            localStorage.setItem("voter", user);
+        var voted = theVotedList.includes(user + " ");
+        
+        if(userList.includes(user)) {
+            if (voted === true){
+                event.preventDefault();
+                alert("Du kan kun stemme 1 gang")
+            }
             
             
-        })
-        console.log(theVotedList);
+        } else{
+            alert("Du skal skrive dit lønnummer")
             
-
+            event.preventDefault()
+            
+        }  
+        localStorage.setItem("voter", user);
+        
+        
+        console.log(voted);
+    })
+    
+    
+    
 
 })
 

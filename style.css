@@ -1,62 +1,66 @@
-#voter{
-    display: none;
+#voter {
+	display: none;
 }
 
-body{
-    background-color: #1D2F53;
-    max-width: 400px;
-    margin: 0 auto;
+body {
+	background-color: #1D2F53;
+	max-width: 400px;
+	margin: 0 auto;
 }
 
-#vote{
-    display: block;
-    margin-bottom: 1em;
+#vote {
+	display: block;
+	margin-bottom: 1em;
 }
 
-#message{
-    display: block;
-    margin-bottom: 1em;
+#message {
+	display: block;
+	margin-bottom: 1em;
 }
 
-h1, p, label{
-    color: white;
-    font-family: 'Roboto', sans-serif;
+h1,
+p,
+label {
+	color: white;
+	font-family: 'Roboto', sans-serif;
 }
 
 .logInForm input[type=number] {
-    border-radius: 15px;
-    height: 1.5em;
-    width: 350px;
-    margin-left: 2%;
-    margin-top: 2em;
-    display: block;
+	border-radius: 15px;
+	height: 1.5em;
+	width: 350px;
+	margin-left: 2%;
+	margin-top: 2em;
+	display: block;
 }
 
 .logInForm input[type=submit] {
-    width: 100px;
-    margin-top: 1.5em;
-    margin-left: 35%;
+	width: 100px;
+	margin-top: 1.5em;
+	margin-left: 35%;
 }
 
-.logInForm{
-    margin-top: 7em;
+.logInForm {
+	margin-top: 7em;
 }
 
-.logInForm label{
-    font-size: 1.9em;
-}
-.tina{
-    color: yellow;
-    font-size: 1em;
-}
-.tak{
-    text-align: center;
-}
- 
-.options{
-    display: none;
+.logInForm label {
+	font-size: 1.9em;
 }
 
-.logo{
-    text-align: center;
+.tina {
+	color: yellow;
+	font-size: 1em;
+}
+
+.tak {
+	text-align: center;
+}
+
+.options {
+	display: none;
+}
+
+.logo {
+	text-align: center;
 }

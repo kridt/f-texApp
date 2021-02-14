@@ -110,6 +110,7 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 
 					fetch(`https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`, {
 						method: `POST`,
+						contentType: "application/x-www-form-urlencoded",
 						body
 					}).then(response => {
 						if (!response.ok) {

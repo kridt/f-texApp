@@ -59,23 +59,7 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 		var voteLocalStorage = localStorage.getItem("vote")
 		console.log(localStorage.getItem("vote"));
 
-		function shuffle(array) {
-			var currentIndex = array.length,
-				temporaryValue, randomIndex;
-
-			while (0 !== currentIndex) {
-
-				randomIndex = Math.floor(Math.random() * currentIndex);
-				currentIndex -= 1;
-
-				temporaryValue = array[currentIndex];
-				array[currentIndex] = array[randomIndex];
-				array[randomIndex] = temporaryValue;
-			}
-
-			return array;
-		}
-		shuffle(data.results);
+		
 
 		function goHome() {
 			window.location.href = "/";
@@ -110,7 +94,6 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 
 					fetch(`https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`, {
 						method: `POST`,
-						contentType: "application/x-www-form-urlencoded",
 						body
 					}).then(response => {
 						if (!response.ok) {

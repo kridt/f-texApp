@@ -118,7 +118,7 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 						}
 
 					})
-					window.location.href = "f-texApp/tak.html";
+					window.location.href = "/f-texApp/tak.html";
 
 				});
 			})

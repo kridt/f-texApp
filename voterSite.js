@@ -101,9 +101,9 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 							alert("Noget gik galt")
 							return;
 						}
+						window.location.href = "/f-texApp/tak.html";
 
 					})
-					window.location.href = "/f-texApp/tak.html";
 
 				});
 			})

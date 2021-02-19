@@ -3,6 +3,7 @@ var theVotedList = [];
 fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 	.then(response => response.json())
 	.then(function(data) {
+		console.log(data);
 		var userLogIn = document.getElementById("user");
 		var user = "";
 		var logInForm = document.querySelector(".logInForm");
@@ -17,7 +18,6 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 		fetch(`https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`)
 			.then(response => response.json())
 			.then(function(data) {
-
 				data.voting.forEach(element => {
 					var voter = element.voter;
 					theVotedList.push(voter)

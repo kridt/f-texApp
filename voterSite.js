@@ -96,7 +96,7 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 						method: `POST`,
 						body
 					}).then(response => {
-						console.log(response);
+						console.log("post", response);
 						if (!response.ok) {
 							alert("Noget gik galt")
 							return;

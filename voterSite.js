@@ -26,8 +26,12 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 							displayName.innerText = `Hey Tina v2`;
 
 						} else {
+								if (user === "305094"){
+									displayName === `Hej Bachi`
+								}else{
 
-							displayName.innerText = `Hej ${first_name}`;
+									displayName.innerText = `Hej ${first_name}`;
+								}
 
 						}
 

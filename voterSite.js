@@ -29,8 +29,13 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 								if (user === "305094"){
 									displayName === `Hej Bachi`
 								}else{
+									
+									if(user === "177538"){
+										displayName.innerText = `omfg dig igen Tinas lillebror`
+									}else{
 
-									displayName.innerText = `Hej ${first_name}`;
+										displayName.innerText = `Hej ${first_name}`;
+									}
 								}
 
 						}

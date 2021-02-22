@@ -34,6 +34,7 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 				if (voted === true) {
 					event.preventDefault();
 					alert("Du kan kun stemme 1 gang")
+					
 				}
 
 			} else {

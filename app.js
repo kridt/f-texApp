@@ -28,7 +28,6 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 		logInForm.addEventListener("submit", function(event) {
 
 			user = userLogIn.value;
-			localStorage.setItem("user", user)
 			var voted = theVotedList.includes(user + " ");
 
 			if (userList.includes(user)) {

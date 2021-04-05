@@ -19,6 +19,11 @@ function shuffle(array) {
 	return array;
   }
   
+  if(user === null){
+	  alert("Noget gik galt, prøv igen")
+	  window.location.href="/f-texApp/"
+  }
+
 /* console.log(user); */
 
 fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")

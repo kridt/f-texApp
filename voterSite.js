@@ -31,8 +31,26 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 	.then(function(data) {
 		setTimeout(function() {
 			var name = data.results.filter(x => x.sallingID === user).map(x => x.name)
+			var position = data.results.filter(x => x.sallingID === user).map(x => x.leder)
 			var full_name_spit = name[0].split(" ")
 			var first_name = full_name_spit[0]
+
+			const updateDiv = document.getElementById("updateCoworkers");
+
+			function updateCoworkers(){
+				const createCoworker = document.createElement("a")
+				const deleteCoworker = document.createElement("a")
+				const whosWinning = document.createElement("a")
+				const removeAllVotes = document.createElement("a")
+
+				whosWinning.setAttribute("href", "/resultat.html")
+				whosWinning.innerText = `Tjek resultat`
+				updateDiv.appendChild(whosWinning)
+
+				deleteCoworker.setAttribute("href", "/sure.html")
+				deleteCoworker.innerText = "Slet alle stemmer"
+				updateDiv.appendChild(deleteCoworker)
+			}
 
 			if (user === "127027") {
 				displayName.innerHTML = `<h1 class="tina">YELLOW ${first_name}!</h1> `;
@@ -57,8 +75,14 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 									if(user === "177538"){
 										displayName.innerText = `omfg dig igen Tinas lillebror`
 									}else{
+										if(position[0] === true){
+											displayName.innerText = `Hej ${first_name}`;
+											updateCoworkers()
+										}else{
 
-										displayName.innerText = `Hej ${first_name}`;
+											displayName.innerText = `Hej ${first_name}`;
+										}
+
 									}
 								}
 

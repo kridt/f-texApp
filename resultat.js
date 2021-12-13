@@ -1,10 +1,12 @@
 var liste = document.querySelector(".leaderboard");
 let url = new URLSearchParams(window.location.search);
+const voteCount = document.getElementById("voteCount");
 
 fetch(`https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes`)
 	.then(response => response.json())
 	.then(function(data) {
 
+		voteCount.innerText = data.count
 		console.log(data);
 
 		data.voting.forEach(result => {

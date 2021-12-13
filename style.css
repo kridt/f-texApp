@@ -64,3 +64,17 @@ label {
 .logo {
 	text-align: center;
 }
+#createCoworkerForm input{
+	margin: 1em 0;
+}
+
+#updateCoworkers{
+	display: flex;
+	justify-content: space-evenly;
+	margin: 2em 0;
+}
+
+#updateCoworkers a{
+	color:white;
+	text-decoration:none
+}

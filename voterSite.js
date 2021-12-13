@@ -1,8 +1,8 @@
 var user = localStorage.getItem("voter");
 var displayName = document.getElementById("name");
-var url = window.location.pathname;
+var githubUrl = window.location.href + "/f-oetexApp";
 
-console.log(url);
+console.log(githubUrl);
 
 function shuffle(array) {
 	var currentIndex = array.length, temporaryValue, randomIndex;
@@ -47,11 +47,11 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 				const whosWinning = document.createElement("a")
 				const removeAllVotes = document.createElement("a")
 
-				whosWinning.setAttribute("href", "/resultat.html")
+				whosWinning.setAttribute("href", "/f-texApp/resultat.html")
 				whosWinning.innerText = `Tjek resultat`
 				updateDiv.appendChild(whosWinning)
 
-				deleteCoworker.setAttribute("pathname", "/sure.html")
+				deleteCoworker.setAttribute("href", "/f-texApp/sure.html")
 				deleteCoworker.innerText = "Slet alle stemmer"
 				updateDiv.appendChild(deleteCoworker)
 			}

@@ -1,5 +1,9 @@
 var user = localStorage.getItem("voter");
 var displayName = document.getElementById("name");
+var url = window.location.pathname;
+
+console.log(url);
+
 function shuffle(array) {
 	var currentIndex = array.length, temporaryValue, randomIndex;
   
@@ -47,7 +51,7 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 				whosWinning.innerText = `Tjek resultat`
 				updateDiv.appendChild(whosWinning)
 
-				deleteCoworker.setAttribute("href", "/sure.html")
+				deleteCoworker.setAttribute("pathname", "/sure.html")
 				deleteCoworker.innerText = "Slet alle stemmer"
 				updateDiv.appendChild(deleteCoworker)
 			}

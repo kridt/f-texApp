@@ -51,9 +51,15 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/coworkers")
 				whosWinning.innerText = `Tjek resultat`
 				updateDiv.appendChild(whosWinning)
 
-				deleteCoworker.setAttribute("href", "/f-texApp/sure.html")
-				deleteCoworker.innerText = "Slet alle stemmer"
+				removeAllVotes.setAttribute("href", "/f-texApp/sure.html")
+				removeAllVotes.innerText = "Slet alle stemmer"
+				updateDiv.appendChild(removeAllVotes)
+
+
+				deleteCoworker.setAttribute("href", "/f-texApp/sletMedarbejder.html")
+				deleteCoworker.innerText = "Slet en medarbejder"
 				updateDiv.appendChild(deleteCoworker)
+
 			}
 
 			if (user === "127027") {

@@ -13,7 +13,7 @@ fetch("https://foetex-osterbro-medarbejdere.herokuapp.com/api/v1/votes")
                 method:"delete"
             })
             .then(response => {
-                window.location.href = "/"
+                window.location.href = "/f-texApp"
             })
             
         })
